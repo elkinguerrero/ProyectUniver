@@ -24,6 +24,12 @@
                     die('Consulta no válida: ' . mysqli_error());
                 }else{
                     echo "Datos insertados correctamente";
+                    //correo
+                    include("phpmailer/correo.php");
+                    $subject="Creacion de correo ProyectoUniversidad";
+                    $body="Usuario creado";
+                    enviar_mensaje([$Correo], $subject, $body);
+                    //correo
                 }
             }else{
                 echo "Usuario ya esta registrado en la base de datos";
