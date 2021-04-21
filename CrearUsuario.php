@@ -1,6 +1,6 @@
 <?php
-    //phpinfo();
-    //return;
+    phpinfo();
+    return;
     include("conexion.php");
 
     $Nombre = $_GET["Nombre"];
