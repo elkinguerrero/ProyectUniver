@@ -1,6 +1,6 @@
 <?php
-    phpinfo();
-    return;
+    //phpinfo();
+    //return;
     include("conexion.php");
 
     $Nombre = $_GET["Nombre"];
@@ -8,10 +8,10 @@
     $Clave = $_GET["Clave"];
 
     $query = "INSERT INTO `Clientes`(`Nombre`, `Correo`, `Clave2`) VALUES ('$Nombre','$Correo','$Clave')";
-    $resultado = mysql_query($conexion, $query);
+    $resultado = mysqli_query($conexion, $query);
 
-    /*if (!$resultado) {
-        die('Consulta no válida: ' . mysql_error());
+    if (!$resultado) {
+        die('Consulta no válida: ' . mysqli_error());
     }
     /*while ($resultado = mysqli_fetch_array($query)){
         echo json_decode($resultado);
