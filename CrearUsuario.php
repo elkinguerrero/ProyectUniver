@@ -29,11 +29,4 @@
             echo "Datos insertados correctamente";
         }
     }
-
-    
-    /*while ($resultado = mysqli_fetch_array($query)){
-        echo json_decode($resultado);
-    {*/
-
-    echo $query;
 ?>
