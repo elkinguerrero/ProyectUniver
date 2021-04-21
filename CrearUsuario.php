@@ -2,9 +2,9 @@
     include("conexion.php");
     $validar = 0;
 
-    $Nombre = $_POST["Nombre"];
-    $Correo = $_POST["Correo"];
-    $Clave = $_POST["Clave"];
+    $Nombre = isset($_POST["Nombre"]) ? $_POST["Nombre"]:"" ;
+    $Correo = isset($_POST["Correo"]) ? $_POST["Correo"]:"" ;
+    $Clave = isset($_POST["Clave"]) ? $_POST["Clave"]:"" ;
 
     if($Clave = '' || $Correo = ''){
         echo "El usuario y la clave no pueden ser vacias";
