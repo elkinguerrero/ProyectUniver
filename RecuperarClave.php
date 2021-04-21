@@ -13,7 +13,7 @@
             echo "Error al consultar usuario contacte con el administrador\n\n";
             die('Consulta no válida: ' . mysqli_error());
         }else{
-            if(mysqli_num_rows($resultado) == 0){
+            if(mysqli_num_rows($resultado) != 0){
                 $respuesta = mysqli_fetch_assoc($resultado);
 
                 echo "Se ha enviado un correo con sus datos";
