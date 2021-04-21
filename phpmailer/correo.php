@@ -23,9 +23,9 @@ function enviar_mensaje($correo_destino, $asunto, $mensaje){
                                               // 3 -> Códigos de estado de cada fase de la conexión, además del diálogo entre cliente y servidor/servidor y cliente
                                               // 4 -> Devuelve a bajo nivel toda la traza de la conversación entre cliente y servidor SMTP
     $mail->SMTPAuth   = true;                  // Habilita la autenticación SMTP 
-    $mail->SMTPSecure = "TLS";            // Establece el tipo de seguridad SMTP 
+    $mail->SMTPSecure = "SSL";            // Establece el tipo de seguridad SMTP 
     $mail->Host       = "smtp.gmail.com";  // Establece Gmail como el servidor SMTP 
-    $mail->Port       = 587;                   // Establece el puerto del servidor SMTP de Gmail 
+    $mail->Port       = 465;                   // Establece el puerto del servidor SMTP de Gmail 
     $mail->Username   = $correo_emisor;        // Usuario Gmail 
     $mail->Password   = $contrasena;           // Contraseña Gmail 
 
