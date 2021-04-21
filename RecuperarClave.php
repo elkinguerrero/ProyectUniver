@@ -2,7 +2,7 @@
     include("conexion.php");
     $validar = 0;
 
-    $Correo = isset($_POST["Correo"]) ? $_POST["Correo"]:"" ;
+    $Correo = isset($_GET["Correo"]) ? $_GET["Correo"]:"" ;
 
     if( $Correo == ''){
         echo "Debe colocar un correo";
@@ -21,7 +21,7 @@
                 include("phpmailer/correo.php");
                 $subject="Recuperacion de clave ProyectoUniversidad";
                 $body="Su clave es: "+base64_decode($respuesta['Clave']);
-                enviar_mensaje([$Correo], $subject, "asdasdasd");
+                enviar_mensaje([$Correo], $subject, $body);
                 //correo
             }else{
                 echo "El correo no esta en nuestra base de datos";
