@@ -23,7 +23,6 @@
                 $body="Su clave es: "+base64_decode($respuesta['Clave']);
                 enviar_mensaje([$Correo], $subject, $body);
                 //correo
-            }
             }else{
                 echo "El correo no esta en nuestra base de datos";
             }
