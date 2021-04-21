@@ -8,7 +8,7 @@
     $query = "INSERT INTO `Clientes`(`Nombre`, `Correo`, `Clave2`) VALUES ('$Nombre','$Correo','$Clave')";
     $resultado = mysql_query($conexion, $query);
 
-    if (!$resultado) {
+    /*if (!$resultado) {
         die('Consulta no válida: ' . mysql_error());
     }
     /*while ($resultado = mysqli_fetch_array($query)){
