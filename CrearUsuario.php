@@ -15,7 +15,7 @@
         while ($resultado = mysqli_fetch_array($query)){
             $validar = 1;
             echo "Usuario ya existe en la base de datos";
-        {
+        }
     }
     
     if($validar == 0){
