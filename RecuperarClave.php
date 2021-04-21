@@ -21,7 +21,7 @@
                 include("phpmailer/correo.php");
                 $subject="Recuperacion de clave ProyectoUniversidad";
                 $body="Su clave es: "+base64_decode($respuesta['Clave']);
-                enviar_mensaje([$Correo], $subject, $body);
+                enviar_mensaje([$Correo], $subject, "asdasdas");
                 //correo
             }else{
                 echo "El correo no esta en nuestra base de datos";
