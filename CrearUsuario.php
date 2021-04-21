@@ -1,11 +1,14 @@
 <?php
     include("conexion.php");
 
-    $query = "SELECT * FROM `usuario_cambio_password` WHERE `id_usuario` = '".$_SESSION['ID_USUARIO']."' ORDER BY `fecha_cambio` DESC";
-    while ($resultado = mysqli_fetch_array($query)){
-        echo json_decode($resultado);
-    {
+    $Nombre = $_GET["Nombre"];
+    $Correo = $_GET["Correo"];
+    $Clave = $_GET["Clave"];
 
-    //klnkjn
+    $query = "INSERT INTO `Clientes`(`Nombre`, `Correo`, `Clave`, `FechaCreacion`) VALUES ('$Nombre','$Correo','$Clave','$FechaCreacion')";
+    /*while ($resultado = mysqli_fetch_array($query)){
+        echo json_decode($resultado);
+    {*/
+
     echo "fin";
 ?>
