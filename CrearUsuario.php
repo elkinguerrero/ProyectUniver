@@ -8,7 +8,7 @@
 
     echo "//$Nombre//\n";
     echo "//$Correo//\n";
-    if($Clave = '' || $Correo = ''){
+    if($Clave == '' || $Correo == ''){
         echo "El usuario y la clave no pueden ser vacias";
     }else{
         $query = "SELECT count(*) FROM `Clientes` WHERE `Correo` = ''";
