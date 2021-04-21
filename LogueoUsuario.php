@@ -8,8 +8,7 @@
     if($Clave == '' || $Correo == ''){
         echo "El usuario y la clave no pueden ser vacias";
     }else{
-        $query = "SELECT * FROM `Clientes` WHERE `Correo` = '$Clave' AND `Clave` = ''";
-        echo $query;
+        $query = "SELECT * FROM `Clientes` WHERE `Correo` = '$Correo' AND `Clave` = '$Clave'";
         $resultado = mysqli_query($conexion, $query);
         if (!$resultado) {
             echo "Error al consultar usuario contacte con el administrador\n\n";
