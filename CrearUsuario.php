@@ -22,11 +22,11 @@
         $query = "INSERT INTO `Clientes`(`Nombre`, `Correo`, `Clave`) VALUES ('$Nombre','$Correo','$Clave')";
         $resultado = mysqli_query($conexion, $query);
     
-        if (!$resultado) {
+        /*if (!$resultado) {
             echo "Error al insertar usuario, contacte con el administrador\n\n";
             die('Consulta no válida: ' . mysqli_error());
         }else{
             echo "Datos insertados correctamente";
-        }
+        }*/
     }
 ?>
