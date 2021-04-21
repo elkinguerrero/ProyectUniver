@@ -6,7 +6,7 @@
     $Clave = $_GET["Clave"];
 
     $query = "INSERT INTO `Clientes`(`Nombre`, `Correo`, `Clave`, `FechaCreacion`) VALUES ('$Nombre','$Correo','$Clave','$FechaCreacion')";
-    mysqli_fetch_array($conexion, $query)
+    mysqli_fetch_array($conexion, $query);
     /*while ($resultado = mysqli_fetch_array($query)){
         echo json_decode($resultado);
     {*/
