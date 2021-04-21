@@ -2,7 +2,7 @@
     include("conexion.php");
     $validar = 0;
 
-    $Correo = isset($_GET["Correo"]) ? $_GET["Correo"]:"" ;
+    $Correo = isset($_POST["Correo"]) ? $_POST["Correo"]:"" ;
 
     if( $Correo == ''){
         echo "Debe colocar un correo";
