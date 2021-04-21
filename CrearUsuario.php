@@ -11,5 +11,5 @@
         echo json_decode($resultado);
     {*/
 
-    echo "fin";
+    echo $query;
 ?>
