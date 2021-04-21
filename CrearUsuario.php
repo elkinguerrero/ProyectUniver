@@ -6,6 +6,8 @@
     $Correo = isset($_POST["Correo"]) ? $_POST["Correo"]:"" ;
     $Clave = isset($_POST["Clave"]) ? $_POST["Clave"]:"" ;
 
+    echo "//$Nombre//\n";
+    echo "//$Correo//\n";
     if($Clave = '' || $Correo = ''){
         echo "El usuario y la clave no pueden ser vacias";
     }else{
