@@ -3,9 +3,9 @@
     //return;
     include("conexion.php");
 
-    $Nombre = $_GET["Nombre"];
-    $Correo = $_GET["Correo"];
-    $Clave = $_GET["Clave"];
+    $Nombre = $_POST["Nombre"];
+    $Correo = $_POST["Correo"];
+    $Clave = $_POST["Clave"];
 
     $query = "INSERT INTO `Clientes`(`Nombre`, `Correo`, `Clave`) VALUES ('$Nombre','$Correo','$Clave')";
     $resultado = mysqli_query($conexion, $query);
