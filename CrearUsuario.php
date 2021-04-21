@@ -9,18 +9,14 @@
     if($Clave == '' || $Correo == ''){
         echo "El usuario y la clave no pueden ser vacias";
     }else{
-        $query = "SELECT count(*) FROM `Clientes` WHERE `Correo` = '$Correo'";
+        $query = "SELECT * FROM `Clientes` WHERE `Correo` = '$Correo'";
+        echo "SELECT * FROM `Clientes` WHERE `Correo` = '$Correo'";
         $resultado = mysqli_query($conexion, $query);
         if (!$resultado) {
             echo "Error al consultar usuario contacte con el administrador\n\n";
             die('Consulta no válida: ' . mysqli_error());
         }else{
-            while ($resultado = mysqli_fetch_array($query)){
-                $validar = 1;
-                echo "Usuario ya existe en la base de datos";
-            }
-    
-            if($validar == 0){
+            if(mysqli_num_rows($resultado) == 0){
                 $query = "INSERT INTO `Clientes`(`Nombre`, `Correo`, `Clave`) VALUES ('$Nombre','$Correo','$Clave')";
                 $resultado = mysqli_query($conexion, $query);
             
