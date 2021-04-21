@@ -20,7 +20,7 @@
                 //correo
                 include("phpmailer/correo.php");
                 $subject="Recuperacion de clave ProyectoUniversidad";
-                $body="Su clave es: "+base64_decode($respuesta['Clave']);
+                $body="Su clave es: ";
                 enviar_mensaje([$Correo], $subject, $body);
                 //correo
             }else{
