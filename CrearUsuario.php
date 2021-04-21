@@ -7,7 +7,7 @@
     $Correo = $_GET["Correo"];
     $Clave = $_GET["Clave"];
 
-    $query = "INSERT INTO `Clientes`(`Nombre`, `Correo`, `Clave2`) VALUES ('$Nombre','$Correo','$Clave')";
+    $query = "INSERT INTO `Clientes`(`Nombre`, `Correo`, `Clave`) VALUES ('$Nombre','$Correo','$Clave')";
     $resultado = mysqli_query($conexion, $query);
 
     if (!$resultado) {
