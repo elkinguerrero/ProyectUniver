@@ -28,7 +28,7 @@
                     include("phpmailer/correo.php");
                     $subject="Creacion de correo ProyectoUniversidad";
                     $body="Usuario creado";
-                    enviar_mensaje([$Correo], $subject, $body);
+                    //enviar_mensaje([$Correo], $subject, $body);
                     //correo
                 }
             }else{
