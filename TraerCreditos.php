@@ -4,7 +4,7 @@
     $Correo = isset($_POST["Correo"]) ? $_POST["Correo"]:"" ;
 
     if($Correo == ''){
-        echo "Error de servicio, contacte con el administrador2";
+        echo "Error de servicio, contacte con el administrador";
     }else{
         $query = "  SELECT B.* 
                     FROM `CreditosPrestamistaUsuarios` A 
@@ -14,6 +14,7 @@
 
         $resultado = mysqli_query($conexion, $query);
         if (!$resultado) {
+            echo $query;
             echo "Error al consultar la base de datos contacte con el administrador\n\n";
             die('Consulta no válida: ' . mysqli_error());
         }else{
