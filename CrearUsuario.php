@@ -9,8 +9,6 @@
         echo "El usuario y la clave no pueden ser vacias";
     }else{
         $query = "SELECT * FROM `Usuarios` WHERE `Correo` = '$Correo'";
-        echo $Correo;
-        echo $Clave;
         $resultado = mysqli_query($conexion, $query);
         if (!$resultado) {
             echo "Error al consultar usuario contacte con el administrador\n\n";
@@ -20,6 +18,7 @@
                 echo $Correo;
                 echo $Clave;
                 $query = "INSERT INTO `Usuarios`(`Documento`, `Nombres`, `Apellidos`, `Correo`, `Clave`, `Sexo`, `País`, `Dirección`, `Teléfono Fijo`, `Celular`, `Estado`, `Perfli`) VALUES (0,'','','$correo','$clave','',0,'','','',1,'Usuario');";
+                echo $query;
                 $resultado = mysqli_query($conexion, $query);
             
                 if (!$resultado) {
