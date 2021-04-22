@@ -1,16 +1,16 @@
 <?php
     include("conexion.php");
 
-    $ID = isset($_POST["Correo"]) ? $_POST["Correo"]:"" ;
+    $Correo = isset($_POST["Correo"]) ? $_POST["Correo"]:"" ;
 
-    if($ID == ''){
+    if($Correo == ''){
         echo "Error de servicio, contacte con el administrador";
     }else{
         $query = "  SELECT B.* 
                     FROM `CreditosPrestamistaUsuarios` A 
                     INNER JOIN `Creditos` B
                     ON A.IdCredito = B.Id
-                    WHERE A.`IdCliente` = '$ID'";
+                    WHERE A.`Correo` = '$Correo'";
 
         $resultado = mysqli_query($conexion, $query);
         if (!$resultado) {
