@@ -1,7 +1,7 @@
 <?php
     include("conexion.php");
 
-    $ID = isset($_POST["ID"]) ? $_POST["ID"]:"" ;
+    $ID = isset($_GET["ID"]) ? $_GET["ID"]:"" ;
 
     if($ID == ''){
         echo "Error de servicio, contacte con el administrador";
