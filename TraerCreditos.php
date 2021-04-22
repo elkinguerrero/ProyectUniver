@@ -12,7 +12,7 @@
                     ON A.IdCredito = B.Id
                     WHERE A.`IdCliente` = '$ID'";
 
-        echo $quey;
+        echo $query;
                     
         $resultado = mysqli_query($conexion, $query);
         if (!$resultado) {
@@ -22,7 +22,7 @@
             if(mysqli_num_rows($resultado) == 0){
                 echo "No hay Crediros para mostrar";
             }else{
-                echo $quey;
+                echo $query;
                 echo json_decode(mysqli_fetch_assoc($resultado));
             }
         }
