@@ -4,7 +4,7 @@
     $Correo = isset($_POST["Correo"]) ? $_POST["Correo"]:"" ;
 
     if($Correo == ''){
-        echo "Error de servicio, contacte con el administrador";
+        echo "Error de servicio, contacte con el administrador2";
     }else{
         $query = "  SELECT B.* 
                     FROM `CreditosPrestamistaUsuarios` A 
