@@ -20,8 +20,8 @@
             if(mysqli_num_rows($resultado) == 0){
                 echo "No hay Crediros para mostrar";
             }else{
+                echo $quey;
                 echo json_decode(mysqli_fetch_assoc($resultado));
-                echo "Error contraseña o usuario incorrecto";
             }
         }
     }
