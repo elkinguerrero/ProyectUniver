@@ -2,26 +2,21 @@
     include("conexion.php");
     $validar = 0;
 
-    $ID = isset($_POST["ID"]) ? $_POST["ID"]:"" ;
+    $Correo = isset($_POST["Correo"]) ? $_POST["Correo"]:"" ;
+    $Clave = isset($_POST["Clave"]) ? base64_encode($_POST["Clave"]):"" ;
 
-    if($ID == ''){
-        echo "Error de servicio, contacte con el administrador";
+    if($Clave == '' || $Correo == ''){
+        echo "El usuario y la clave no pueden ser vacias";
     }else{
-        $query = "  SELECT B.* 
-                    FROM `CreditosPrestamistaUsuarios` A 
-                    INNER JOIN `Creditos` B
-                    ON A.IdCredito = B.Id
-                    WHERE A.`IdCliente` = '$ID'";
-                    
+        $query = "SELECT * FROM `Usuarios` WHERE `Correo` = '$Correo' AND `Clave` = '$Clave'";
         $resultado = mysqli_query($conexion, $query);
         if (!$resultado) {
             echo "Error al consultar usuario contacte con el administrador\n\n";
             die('Consulta no válida: ' . mysqli_error());
         }else{
-            if(mysqli_num_rows($resultado) == 0){
-                echo "No hay Crediros para mostrar";
+            if(mysqli_num_rows($resultado) != 0){
+                echo "exito";
             }else{
-                echo json_decode(mysqli_fetch_assoc($resultado));
                 echo "Error contraseña o usuario incorrecto";
             }
         }
