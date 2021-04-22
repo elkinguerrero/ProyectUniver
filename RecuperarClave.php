@@ -7,7 +7,7 @@
     if( $Correo == ''){
         echo "Debe colocar un correo";
     }else{
-        $query = "SELECT * FROM `Clientes` WHERE `Correo` = '$Correo'";
+        $query = "SELECT * FROM `Usuarios` WHERE `Correo` = '$Correo'";
         $resultado = mysqli_query($conexion, $query);
         if (!$resultado) {
             echo "Error al consultar usuario contacte con el administrador\n\n";

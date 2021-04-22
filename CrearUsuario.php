@@ -2,21 +2,20 @@
     include("conexion.php");
     $validar = 0;
 
-    $Nombre = isset($_POST["Nombre"]) ? $_POST["Nombre"]:"" ;
     $Correo = isset($_POST["Correo"]) ? $_POST["Correo"]:"" ;
     $Clave = isset($_POST["Clave"]) ? base64_encode($_POST["Clave"]):"" ;
 
     if($Clave == '' || $Correo == ''){
         echo "El usuario y la clave no pueden ser vacias";
     }else{
-        $query = "SELECT * FROM `Clientes` WHERE `Correo` = '$Correo'";
+        $query = "SELECT * FROM `Usuarios` WHERE `Correo` = '$Correo'";
         $resultado = mysqli_query($conexion, $query);
         if (!$resultado) {
             echo "Error al consultar usuario contacte con el administrador\n\n";
             die('Consulta no válida: ' . mysqli_error());
         }else{
             if(mysqli_num_rows($resultado) == 0){
-                $query = "INSERT INTO `Clientes`(`Nombre`, `Correo`, `Clave`) VALUES ('$Nombre','$Correo','$Clave')";
+                $query = "INSERT INTO `Usuarios`(`Documento`, `Nombres`, `Apellidos`, `Correo`, `Clave`, `Sexo`, `País`, `Dirección`, `Teléfono Fijo`, `Celular`, `Estado`, `Perfli`) VALUES ('','','','$Correo','$Clave','','','','','','','');";
                 $resultado = mysqli_query($conexion, $query);
             
                 if (!$resultado) {
