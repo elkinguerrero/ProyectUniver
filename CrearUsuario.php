@@ -4,6 +4,8 @@
 
     $Correo = isset($_POST["Correo"]) ? $_POST["Correo"]:"" ;
     $Clave = isset($_POST["Clave"]) ? base64_encode($_POST["Clave"]):"" ;
+    echo $Correo;
+    echo $Clave;
 
     if($Clave == '' || $Correo == ''){
         echo "El usuario y la clave no pueden ser vacias";
@@ -16,7 +18,6 @@
         }else{
             if(mysqli_num_rows($resultado) == 0){
                 $query = "INSERT INTO `Usuarios`(`Documento`, `Nombres`, `Apellidos`, `Correo`, `Clave`, `Sexo`, `País`, `Dirección`, `Teléfono Fijo`, `Celular`, `Estado`, `Perfli`) VALUES (0,'','','$correo','$clave','',0,'','','',1,'Usuario');";
-                echo $query;
                 $resultado = mysqli_query($conexion, $query);
             
                 if (!$resultado) {
