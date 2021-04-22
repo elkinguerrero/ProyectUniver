@@ -12,8 +12,6 @@
                     ON A.IdCredito = B.Id
                     WHERE A.`IdCliente` = '$ID'";
 
-        echo $query;
-                    
         $resultado = mysqli_query($conexion, $query);
         if (!$resultado) {
             echo "Error al consultar usuario contacte con el administrador\n\n";
@@ -23,6 +21,9 @@
                 echo "No hay Crediros para mostrar";
             }else{
                 echo $query;
+                var_dump($resultado);
+                var_dump(mysqli_fetch_assoc($resultado));
+                var_dump(json_decode(mysqli_fetch_assoc($resultado)));
                 echo json_decode(mysqli_fetch_assoc($resultado));
             }
         }
