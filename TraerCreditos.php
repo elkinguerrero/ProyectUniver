@@ -10,11 +10,10 @@
                     FROM `CreditosPrestamistaUsuarios` A 
                     INNER JOIN `Creditos` B
                     ON A.IdCredito = B.Id
-                    WHERE A.`Correo` = '$Correo'";
+                    WHERE A.`IdCliente` = (SELECT C.`Id` FROM `Usuarios` C WHERE C.`Correo` = '$Correo')";
 
         $resultado = mysqli_query($conexion, $query);
         if (!$resultado) {
-            echo $query;
             echo "Error al consultar la base de datos contacte con el administrador\n\n";
             die('Consulta no válida: ' . mysqli_error());
         }else{
