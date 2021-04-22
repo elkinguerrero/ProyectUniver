@@ -16,7 +16,6 @@
         }else{
             if(mysqli_num_rows($resultado) == 0){
                 $query = "INSERT INTO `Usuarios`(`Documento`, `Nombres`, `Apellidos`, `Correo`, `Clave`, `Sexo`, `País`, `Dirección`, `Teléfono Fijo`, `Celular`, `Estado`, `Perfli`) VALUES (0,'','','$Correo','$Clave','',0,'','','',1,'Usuario');";
-                echo $query;
                 $resultado = mysqli_query($conexion, $query);
             
                 if (!$resultado) {
