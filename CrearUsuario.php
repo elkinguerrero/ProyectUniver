@@ -15,7 +15,7 @@
             die('Consulta no válida: ' . $query);
         }else{
             if(mysqli_num_rows($resultado) == 0){
-                $query = "INSERT INTO `Usuarios`(`Documento`, `Nombres`, `Apellidos`, `Correo`, `Clave`, `Sexo`, `País`, `Dirección`, `Teléfono Fijo`, `Celular`, `Estado`, `Perfli`) VALUES ('','','','$Correo','$Clave','','','','','','','');";
+                $query = "INSERT INTO `Usuarios`(`Documento`, `Nombres`, `Apellidos`, `Correo`, `Clave`, `Sexo`, `País`, `Dirección`, `Teléfono Fijo`, `Celular`, `Estado`, `Perfli`) VALUES (0,'','','$correo','$clave','',0,'','','',1,'Usuario');";
                 $resultado = mysqli_query($conexion, $query);
             
                 if (!$resultado) {
