@@ -11,6 +11,8 @@
                     INNER JOIN `Creditos` B
                     ON A.IdCredito = B.Id
                     WHERE A.`IdCliente` = '$ID'";
+
+        echo $quey;
                     
         $resultado = mysqli_query($conexion, $query);
         if (!$resultado) {
