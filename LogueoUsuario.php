@@ -1,6 +1,5 @@
 <?php
     include("conexion.php");
-    $validar = 0;
 
     $Correo = isset($_POST["Correo"]) ? $_POST["Correo"]:"" ;
     $Clave = isset($_POST["Clave"]) ? base64_encode($_POST["Clave"]):"" ;
