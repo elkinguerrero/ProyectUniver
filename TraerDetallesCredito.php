@@ -7,7 +7,7 @@
         echo "Error de servicio, contacte con el administrador";
     }else{
         $query = "  SELECT *,
-                    (SELECT ( SUM(D.`Valor`) ) FROM `Pagos` D) AS 'Pagado'  WHERE `Id` = $idcredito
+                    (SELECT ( SUM(D.`Valor`) ) FROM `Pagos` D  WHERE D.`Id` = $idcredito) AS 'Pagado'
                     FROM `CreditosPrestamistaUsuarios` A
                     INNER JOIN `Creditos` B
                     ON B.Id = A.IdCredito
