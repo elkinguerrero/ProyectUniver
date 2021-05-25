@@ -6,7 +6,8 @@
     if($idcredito == ''){
         echo "Error de servicio, contacte con el administrador";
     }else{
-        $query = "  SELECT * 
+        $query = "  SELECT *,
+                    (SELECT ( B.Valor - SUM(D.`Valor`) ) FROM `Pagos` D) AS 'Pagado'
                     FROM `CreditosPrestamistaUsuarios` A
                     INNER JOIN `Creditos` B
                     ON B.Id = A.IdCredito
