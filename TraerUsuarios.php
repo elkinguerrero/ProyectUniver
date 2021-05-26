@@ -1,22 +1,27 @@
 <?php
     include("conexion.php");
 
-    $query = "  SELECT * FROM `Usuarios` WHERE `Perfli` = 'Usuario'";
+    $perfil = isset($_POST["perfil"]) ? $_POST["perfil"]:"" ;
 
-    $resultado = mysqli_query($conexion, $query);
-    if (!$resultado) {
-        echo "Error al consultar la base de datos contacte con el administrador\n\n";
-        die('Consulta no válida: ' . mysqli_error());
+    if($perfil == ''){
+        echo "Error de servicio, contacte con el administrador";
     }else{
-        if(mysqli_num_rows($resultado) == 0){
-            echo "No hay datos para mostrar";
+        $query = "  SELECT * FROM `Usuarios` WHERE `Perfli` = '$perfil'";
+
+        $resultado = mysqli_query($conexion, $query);
+        if (!$resultado) {
+            echo "Error al consultar la base de datos contacte con el administrador\n\n";
+            die('Consulta no válida: ' . mysqli_error());
         }else{
-            $myArray = array();
-            while ($fila = mysqli_fetch_array($resultado)) {
-                $myArray[] = $fila;
+            if(mysqli_num_rows($resultado) == 0){
+                echo "No hay datos para mostrar";
+            }else{
+                $myArray = array();
+                while ($fila = mysqli_fetch_array($resultado)) {
+                    $myArray[] = $fila;
+                }
+                echo json_encode($myArray);
             }
-            echo json_encode($myArray);
         }
     }
-    
 ?>
