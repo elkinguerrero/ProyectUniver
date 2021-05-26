@@ -14,7 +14,11 @@
             die('Consulta no válida: ' . mysqli_error());
         }else{
             if(mysqli_num_rows($resultado) != 0){
-                echo "exito";
+                $myArray = array();
+                while ($fila = mysqli_fetch_array($resultado)) {
+                    $myArray[] = $fila;
+                }
+                echo json_encode($myArray);
             }else{
                 echo "Error contraseña o usuario incorrecto";
             }
