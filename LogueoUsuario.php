@@ -20,7 +20,7 @@
                 }
                 echo json_encode($myArray);
             }else{
-                echo "Error contraseña o usuario incorrecto $query";
+                echo "Error contraseña o usuario incorrecto";
             }
         }
     }

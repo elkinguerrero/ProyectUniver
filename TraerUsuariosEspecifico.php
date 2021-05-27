@@ -1,9 +1,9 @@
 <?php
     include("conexion.php");
 
-    $perfil = isset($_POST["perfil"]) ? $_POST["perfil"]:"" ;
+    $idusuario = isset($_POST["idusuario"]) ? $_POST["idusuario"]:"" ;
 
-    if($perfil == ''){
+    if($idusuario == ''){
         echo "Error de servicio, contacte con el administrador";
     }else{
         $query = " SELECT * FROM `Usuarios` WHERE `Id` = '$idusuario'";
