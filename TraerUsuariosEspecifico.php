@@ -14,16 +14,16 @@
                     INNER JOIN `Creditos` E
                     ON D.IdCredito = E.Id
                     WHERE E.estado = 1
-                    AND D.IdPrestamista = A.Id) AS 'CantCreditosActivos',
+                    AND (D.IdPrestamista = A.Id OR D.IdCliente = A.Id)) AS 'CantCreditosActivos',
                     (SELECT COUNT(*) FROM `CreditosPrestamistaUsuarios` D
                     INNER JOIN `Creditos` E
                     ON D.IdCredito = E.Id
                     WHERE E.estado = 2
-                    AND D.IdPrestamista = A.Id) AS 'CantCreditosPagados',
+                    AND (D.IdPrestamista = A.Id OR D.IdCliente = A.Id)) AS 'CantCreditosPagados',
                     (SELECT SUM(E.valor) FROM `CreditosPrestamistaUsuarios` D
                     INNER JOIN `Creditos` E
                     ON D.IdCredito = E.Id
-                    AND D.IdPrestamista = A.Id) AS 'SumCreditos'
+                    AND (D.IdPrestamista = A.Id OR D.IdCliente = A.Id)) AS 'SumCreditos'
                 FROM `Usuarios` A
                 WHERE `Id` = '$idusuario'";
 
