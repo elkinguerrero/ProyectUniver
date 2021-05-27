@@ -8,6 +8,7 @@
         echo "Error de servicio, contacte con el administrador";
     }else{
         $query = "UPDATE `Usuarios` SET `Estado`='$estado' WHERE `Id` = '$idusuario'";
-        $resultado = mysqli_query($conexion, $query);
+        mysqli_query($conexion, $query);
+        echo $query;
     }
 ?>
